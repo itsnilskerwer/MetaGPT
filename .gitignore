@@ -118,6 +118,13 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+.metagpt/*
+.metagpt/
+config2.yaml
+*/config2.yaml
+*/config.yaml
+*/config/*
+multiagent39venv/*
 
 # Spyder project settings
 .spyderproject
