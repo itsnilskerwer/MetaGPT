@@ -118,8 +118,10 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+*/.metagpt/config2.yaml
+MetaGPT/config/config2.yaml
 .metagpt/*
-.metagpt/
+.metagpt/config2.yaml
 config2.yaml
 */config2.yaml
 */config.yaml
