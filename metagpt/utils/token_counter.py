@@ -68,6 +68,15 @@ TOKEN_COSTS = {
     "openai/gpt-4-turbo-preview": {"prompt": 0.01, "completion": 0.03},
     "deepseek-chat": {"prompt": 0.00014, "completion": 0.00028},
     "deepseek-coder": {"prompt": 0.00014, "completion": 0.00028},
+    # For ark model https://www.volcengine.com/docs/82379/1099320
+    "doubao-lite-4k-240515": {"prompt": 0.000042, "completion": 0.000084},
+    "doubao-lite-32k-240515": {"prompt": 0.000042, "completion": 0.000084},
+    "doubao-lite-128k-240515": {"prompt": 0.00011, "completion": 0.00013},
+    "doubao-pro-4k-240515": {"prompt": 0.00011, "completion": 0.00028},
+    "doubao-pro-32k-240515": {"prompt": 0.00011, "completion": 0.00028},
+    "doubao-pro-128k-240515": {"prompt": 0.0007, "completion": 0.0012},
+    "llama3-70b-llama3-70b-instruct": {"prompt": 0.0, "completion": 0.0},
+    "llama3-8b-llama3-8b-instruct": {"prompt": 0.0, "completion": 0.0},
 }
 
 
@@ -128,14 +137,30 @@ DashScope Token price https://help.aliyun.com/zh/dashscope/developer-reference/t
 Different model has different detail page. Attention, some model are free for a limited time.
 """
 DASHSCOPE_TOKEN_COSTS = {
-    "qwen-turbo": {"prompt": 0.0011, "completion": 0.0011},
-    "qwen-plus": {"prompt": 0.0028, "completion": 0.0028},
-    "qwen-max": {"prompt": 0.0, "completion": 0.0},
-    "qwen-max-1201": {"prompt": 0.0, "completion": 0.0},
-    "qwen-max-longcontext": {"prompt": 0.0, "completion": 0.0},
+    "qwen2-72b-instruct": {"prompt": 0.000714, "completion": 0.001428},
+    "qwen2-57b-a14b-instruct": {"prompt": 0.0005, "completion": 0.001},
+    "qwen2-7b-instruct": {"prompt": 0.000143, "completion": 0.000286},
+    "qwen2-1.5b-instruct": {"prompt": 0, "completion": 0},
+    "qwen2-0.5b-instruct": {"prompt": 0, "completion": 0},
+    "qwen1.5-110b-chat": {"prompt": 0.001, "completion": 0.002},
+    "qwen1.5-72b-chat": {"prompt": 0.000714, "completion": 0.001428},
+    "qwen1.5-32b-chat": {"prompt": 0.0005, "completion": 0.001},
+    "qwen1.5-14b-chat": {"prompt": 0.000286, "completion": 0.000571},
+    "qwen1.5-7b-chat": {"prompt": 0.000143, "completion": 0.000286},
+    "qwen1.5-1.8b-chat": {"prompt": 0, "completion": 0},
+    "qwen1.5-0.5b-chat": {"prompt": 0, "completion": 0},
+    "qwen-turbo": {"prompt": 0.00028, "completion": 0.00083},
+    "qwen-long": {"prompt": 0.00007, "completion": 0.00028},
+    "qwen-plus": {"prompt": 0.00055, "completion": 0.00166},
+    "qwen-max": {"prompt": 0.0055, "completion": 0.0166},
+    "qwen-max-0428": {"prompt": 0.0055, "completion": 0.0166},
+    "qwen-max-0403": {"prompt": 0.0055, "completion": 0.0166},
+    "qwen-max-0107": {"prompt": 0.0055, "completion": 0.0166},
+    "qwen-max-1201": {"prompt": 0.0166, "completion": 0.0166},
+    "qwen-max-longcontext": {"prompt": 0.0055, "completion": 0.0166},
     "llama2-7b-chat-v2": {"prompt": 0.0, "completion": 0.0},
     "llama2-13b-chat-v2": {"prompt": 0.0, "completion": 0.0},
-    "qwen-72b-chat": {"prompt": 0.0, "completion": 0.0},
+    "qwen-72b-chat": {"prompt": 0.0028, "completion": 0.0028},
     "qwen-14b-chat": {"prompt": 0.0011, "completion": 0.0011},
     "qwen-7b-chat": {"prompt": 0.00084, "completion": 0.00084},
     "qwen-1.8b-chat": {"prompt": 0.0, "completion": 0.0},
@@ -209,6 +234,32 @@ TOKEN_MAX = {
     "openai/gpt-4-turbo-preview": 128000,
     "deepseek-chat": 32768,
     "deepseek-coder": 16385,
+    "doubao-lite-4k-240515": 4000,
+    "doubao-lite-32k-240515": 32000,
+    "doubao-lite-128k-240515": 128000,
+    "doubao-pro-4k-240515": 4000,
+    "doubao-pro-32k-240515": 32000,
+    "doubao-pro-128k-240515": 128000,
+    # Qwen https://help.aliyun.com/zh/dashscope/developer-reference/tongyi-qianwen-7b-14b-72b-api-detailes?spm=a2c4g.11186623.0.i20
+    "qwen2-57b-a14b-instruct": 32768,
+    "qwen2-72b-instruct": 131072,
+    "qwen2-7b-instruct": 32768,
+    "qwen2-1.5b-instruct": 32768,
+    "qwen2-0.5b-instruct": 32768,
+    "qwen1.5-110b-chat": 32000,
+    "qwen1.5-72b-chat": 32000,
+    "qwen1.5-32b-chat": 32000,
+    "qwen1.5-14b-chat": 8000,
+    "qwen1.5-7b-chat": 32000,
+    "qwen1.5-1.8b-chat": 32000,
+    "qwen1.5-0.5b-chat": 32000,
+    "codeqwen1.5-7b-chat": 64000,
+    "qwen-72b-chat": 32000,
+    "qwen-14b-chat": 8000,
+    "qwen-7b-chat": 32000,
+    "qwen-1.8b-longcontext-chat": 32000,
+    "qwen-1.8b-chat": 8000,
+    
 }
 
 # For Amazon Bedrock US region
@@ -256,6 +307,14 @@ BEDROCK_TOKEN_COSTS = {
     "ai21.j2-mid-v1": {"prompt": 0.0125, "completion": 0.0125},
     "ai21.j2-ultra": {"prompt": 0.0188, "completion": 0.0188},
     "ai21.j2-ultra-v1": {"prompt": 0.0188, "completion": 0.0188},
+}
+
+# https://xinghuo.xfyun.cn/sparkapi?scr=price
+SPARK_TOKENS = {
+    "general": {"prompt": 0.0, "completion": 0.0},  # Spark-Lite
+    "generalv2": {"prompt": 0.0188, "completion": 0.0188},  # Spark V2.0
+    "generalv3": {"prompt": 0.0035, "completion": 0.0035},  # Spark Pro
+    "generalv3.5": {"prompt": 0.0035, "completion": 0.0035},  # Spark3.5 Max
 }
 
 
